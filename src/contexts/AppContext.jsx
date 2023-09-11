@@ -32,6 +32,7 @@ const AppProvider = ({ children }) => {
                 setSearchTerm,
                 searchResults,
                 addFavorite,
+                setFavorites,
                 favorites,
             }}
         >
