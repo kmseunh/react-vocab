@@ -12,15 +12,18 @@ const Favorites = () => {
     };
 
     return (
-        <div>
-            <h2>Favorites</h2>
-            <ul>
+        <div className='mt-4'>
+            <h2 className='text-lg font-semibold'>Favorites</h2>
+            <ul className='mt-2'>
                 {favorites.map((favorite, index) => (
-                    <li key={index}>
-                        {favorite}
+                    <li
+                        key={index}
+                        className='flex justify-between items-center py-2 border-b'
+                    >
+                        <span className='text-gray-800'>{favorite}</span>
                         <button
                             onClick={() => onDeleteFavorite(index)}
-                            className='ml-2 text-red-500'
+                            className='text-red-500 hover:text-red-700 focus:outline-none'
                         >
                             Delete
                         </button>

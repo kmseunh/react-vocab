@@ -17,28 +17,44 @@ const SearchResult = () => {
     };
 
     return (
-        <div>
-            <h2>Search Result</h2>
-            <ul>
+        <div className='mt-4'>
+            <h2 className='text-lg font-semibold'>Search Result</h2>
+            <ul className='mt-2'>
                 {displayedResults.map((result, index) => (
-                    <li key={index}>
-                        {result.word}
-                        <button onClick={() => addFavorite(result.word)}>
+                    <li
+                        key={index}
+                        className='flex justify-between items-center py-2 border-b'
+                    >
+                        <span className='text-gray-800'>{result.word}</span>
+                        <button
+                            onClick={() => addFavorite(result.word)}
+                            className='text-blue-500 hover:text-blue-700 focus:outline-none'
+                        >
                             Add to Favorites
                         </button>
                     </li>
                 ))}
             </ul>
-            <div className='pagination'>
+            <div className='mt-4 flex justify-between items-center pagination'>
                 <button
                     onClick={() => changePage(currentPage - 1)}
                     disabled={currentPage === 1}
+                    className={`bg-blue-500 text-white px-3 py-2 rounded-md ${
+                        currentPage === 1
+                            ? 'opacity-50 cursor-not-allowed'
+                            : 'hover:bg-blue-600 focus:outline-none'
+                    }`}
                 >
                     Previous
                 </button>
                 <button
                     onClick={() => changePage(currentPage + 1)}
                     disabled={endIndex >= searchResults.length}
+                    className={`bg-blue-500 text-white px-3 py-2 rounded-md ${
+                        endIndex >= searchResults.length
+                            ? 'opacity-50 cursor-not-allowed'
+                            : 'hover:bg-blue-600 focus:outline-none'
+                    }`}
                 >
                     Next
                 </button>

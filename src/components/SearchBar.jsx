@@ -20,8 +20,14 @@ const SearchBar = () => {
                 placeholder='Search words...'
                 value={inputValue}
                 onChange={handleInputChange}
+                className='border rounded-md px-3 py-2 outline-none focus:border-blue-500'
             />
-            <button onClick={handleSearch}>Search</button>
+            <button
+                onClick={handleSearch}
+                className='bg-blue-500 text-white px-3 py-2 rounded-md hover:bg-blue-600 focus:outline-none'
+            >
+                Search
+            </button>
         </div>
     );
 };
