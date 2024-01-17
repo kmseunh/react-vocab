@@ -8,14 +8,16 @@
 
 ## 목표
 
-- 단어를 입력받아 동의어를 나열합니다.
-- 버튼 클릭 시 즐겨찾기를 추가 및 삭제를 합니다.
+- 단어를 검색하고, 검색 결과를 표시합니다.
+- 원하는 단어를 즐겨찾기에 추가합니다.
 
 &nbsp;
 
 ## Tech Stack
 
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white"> <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white"> <img src="https://img.shields.io/badge/Tailwind CSS-06B6D4?style=for-the-badge&logo=Tailwind CSS&logoColor=white">
+<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white">
+<img src="https://img.shields.io/badge/redux ToolKit-764ABC?style=for-the-badge&logo=redux&logoColor=white">
+<img src="https://img.shields.io/badge/Tailwind CSS-06B6D4?style=for-the-badge&logo=Tailwind CSS&logoColor=white">
 
 &nbsp;
 
@@ -29,7 +31,9 @@
 
 ## Issue
 
-### ⭕️ useContext를 사용하여 컴포넌트 간 데이터 전달 및 상태 공유
+### ⭕️ Redux Toolkit을 사용하여 전역 상태 관리
+
+### ⭕️ createAsyncThunk를 활용하여 비동기 작업을 처리합니다
 
 &nbsp;
 
