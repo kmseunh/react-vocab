@@ -1,17 +1,18 @@
-import { useContext, useState } from 'react';
-import { AppContext } from '../contexts/AppContext';
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addFavorite } from '../slices/favoritesSlice';
 
 const SearchResult = () => {
-    const { searchResults, addFavorite } = useContext(AppContext);
-    const pageSize = 3; // 페이지당 결과 수
+    const dispatch = useDispatch();
+    const searchResults = useSelector((state) => state.search.searchResults);
+
+    const pageSize = 3;
     const [currentPage, setCurrentPage] = useState(1);
 
-    // 현재 페이지의 결과만 필터링
     const startIndex = (currentPage - 1) * pageSize;
     const endIndex = startIndex + pageSize;
     const displayedResults = searchResults.slice(startIndex, endIndex);
 
-    // 페이지를 변경하는 함수
     const changePage = (newPage) => {
         setCurrentPage(newPage);
     };
@@ -27,7 +28,7 @@ const SearchResult = () => {
                     >
                         <span className='text-gray-800'>{result.word}</span>
                         <button
-                            onClick={() => addFavorite(result.word)}
+                            onClick={() => dispatch(addFavorite(result.word))}
                             className='text-blue-500 hover:text-blue-700 focus:outline-none'
                         >
                             Add to Favorites

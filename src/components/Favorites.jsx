@@ -1,14 +1,12 @@
-import { useContext } from 'react';
-import { AppContext } from '../contexts/AppContext';
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteFavorite } from '../slices/favoritesSlice';
 
 const Favorites = () => {
-    const { favorites, setFavorites } = useContext(AppContext);
+    const dispatch = useDispatch();
+    const favorites = useSelector((state) => state.favorites.favorites);
 
-    // favorite 삭제 함수
     const onDeleteFavorite = (index) => {
-        const updatedFavorites = [...favorites];
-        updatedFavorites.splice(index, 1);
-        setFavorites(updatedFavorites);
+        dispatch(deleteFavorite(index));
     };
 
     return (

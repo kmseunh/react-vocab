@@ -1,8 +1,9 @@
-import { useState, useContext } from 'react';
-import { AppContext } from '../contexts/AppContext';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setSearchTerm, fetchSearchResults } from '../slices/searchSlice';
 
 const SearchBar = () => {
-    const { setSearchTerm } = useContext(AppContext);
+    const dispatch = useDispatch();
     const [inputValue, setInputValue] = useState('');
 
     const handleInputChange = (e) => {
@@ -10,7 +11,8 @@ const SearchBar = () => {
     };
 
     const handleSearch = () => {
-        setSearchTerm(inputValue);
+        dispatch(setSearchTerm(inputValue));
+        dispatch(fetchSearchResults(inputValue)); // createAsyncThunk 디스패치
     };
 
     return (

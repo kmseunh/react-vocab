@@ -1,6 +1,6 @@
+import SearchResult from '../components/SearchResult';
 import Favorites from '../components/Favorites';
 import SearchBar from '../components/SearchBar';
-import SearchResult from '../components/SearchResult';
 
 const Home = () => {
     return (
